@@ -3,6 +3,17 @@
 This is a Mock that simulates a Maps WebService where, given a latitude
 longitude, will return a random address.
 
+### Address
+This declares the Address class, primarily just made of the private variables address, city, state and zip. Note that the latitude and longitude are not stored here - they come from the Vehicles API.
+
+### BoogleMapsApplication
+This launches Boogle Maps as a Spring Boot application.
+
+### MapsController
+This is our actual REST controller for the application. This implements what a GET request will respond with - in our case, since it is a Mock of a WebService, we are just responding with a random address from the repository.
+
+### MockAddressRepository
+Repositories normally provide some type of data persistence while the web service runs. In this case, this Mock is simply choosing a random address from the ADDRESSES array defined in the file.
 ## Instructions
 
 Via shell it can be started using

@@ -13,6 +13,9 @@ class MockAddressRepository {
     /**
      * Gets a random address from the list.
      * @return A new, random address split into street, city, state and zip
+     *
+     * [Double colon (::) operator in Java - GeeksforGeeks](https://www.geeksforgeeks.org/double-colon-operator-in-java/)
+     * [(58条消息) Arrays.stream()_我的博客-CSDN博客_arrays.stream().map](https://blog.csdn.net/a13662080711/article/details/84928181)
      */
     static Address getRandom() {
 
