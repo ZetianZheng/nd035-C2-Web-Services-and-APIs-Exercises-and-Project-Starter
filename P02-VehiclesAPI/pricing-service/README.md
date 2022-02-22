@@ -55,32 +55,16 @@ Once converted to a microservice, the Service should not be explicitly necessary
 4. Use a web browser to view the Eureka web console to ensure your microservice is registered.
 ![img.png](img.png)
 5. access rest api created by spring data rest: http://localhost:8762/prices
-> see [how does Spring Data Rest work?](#sdr)  
-
-![img_2.png](img_2.png)
+    > see [how does Spring Data Rest work?](#sdr)  
+    
+    ![img_2.png](img_2.png)
 ### <span id="sdr">how does Spring Data Rest work?</span>
 1. At application startup, Spring Data Rest finds all of the **spring data repositories**
 2. Then, Spring Data Rest **creates an endpoint** that matches the entity name
 3. Next, Spring Data Rest **appends an S** to the entity name in the endpoint
 4. Lastly, Spring Data Rest exposes CRUD (Create, Read, Update, and Delete) operations as RESTful APIs over HTTP
 
-# Question:
-## difference between CrudRepository and @Repository?
-- @Repository:
-    - The inclusion of this annotation is necessary since it will allow the DogRepository to be included in the Application Context/Spring Container and thus be used throughout the application.
-- CrudRepository:
-    - the CrudRepository interface already provides us with methods that perform CRUD operations and that we can use them as they are:
-        1. save
-        2. findById
-        3. findAll
-           4.saveAll
-        5. delete
-        6. deleteById
-        7. deleteAll
-    -  we have to follow this structure because it is the way Spring Data gives us to perform CRUD operations, which is similar to the structure MyBatis gives us to perform CRUD operations.
 
-## eureka.instance.prefer-ip-address=true?
-Set eureka.instance.preferIpAddress to true and, when the application registers with eureka, it uses its IP address rather than its hostname.
 
 
 ## 2. Add an additional test 
@@ -99,3 +83,21 @@ $ java -jar target/pricing-service-0.0.1-SNAPSHOT.jar
 ```
 
 It can also be imported in your IDE as a Maven project.
+
+# Question:
+## difference between CrudRepository and @Repository?
+- @Repository:
+    - The inclusion of this annotation is necessary since it will allow the DogRepository to be included in the Application Context/Spring Container and thus be used throughout the application.
+- CrudRepository:
+    - the CrudRepository interface already provides us with methods that perform CRUD operations and that we can use them as they are:
+        1. save
+        2. findById
+        3. findAll
+           4.saveAll
+        5. delete
+        6. deleteById
+        7. deleteAll
+    -  we have to follow this structure because it is the way Spring Data gives us to perform CRUD operations, which is similar to the structure MyBatis gives us to perform CRUD operations.
+
+## eureka.instance.prefer-ip-address=true?
+Set eureka.instance.preferIpAddress to true and, when the application registers with eureka, it uses its IP address rather than its hostname.
