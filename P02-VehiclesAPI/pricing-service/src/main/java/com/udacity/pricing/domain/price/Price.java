@@ -1,14 +1,22 @@
 package com.udacity.pricing.domain.price;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 
 /**
  * Represents the price of a given vehicle, including currency.
+ * TODO: add vehicle Id as primary key
+ * TODO: why we need insert id even if we done : @GeneratedValue(strategy = GenerationType.AUTO)
  */
+@Entity
 public class Price {
-
     private String currency;
     private BigDecimal price;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long vehicleId;
 
     public Price() {
@@ -19,6 +27,7 @@ public class Price {
         this.price = price;
         this.vehicleId = vehicleId;
     }
+
 
     public String getCurrency() {
         return currency;
