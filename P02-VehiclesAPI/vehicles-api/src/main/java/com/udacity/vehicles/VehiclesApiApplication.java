@@ -49,6 +49,10 @@ public class VehiclesApiApplication {
      * Web Client for the maps (location) API
      * @param endpoint where to communicate for the maps API
      * @return created maps endpoint
+     *
+     * note: @Value
+     *      [A Quick Guide to Spring @Value | Baeldung](https://www.baeldung.com/spring-value-annotation)
+     *      This annotation can be used for injecting values into fields in Spring-managed beans, and it can be applied at the field or constructor/method parameter level.
      */
     @Bean(name="maps")
     public WebClient webClientMaps(@Value("${maps.endpoint}") String endpoint) {

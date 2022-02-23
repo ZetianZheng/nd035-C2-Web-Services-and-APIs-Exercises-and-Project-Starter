@@ -13,7 +13,8 @@ PricingController
 This is our actual REST controller for the application. This implements what a GET request will respond with - in this case, a randomly generated price gathered from the PricingService. 
 Once converted to a microservice, the Controller should not be explicitly necessary.
 > why not be necessary after change to microservice?  
-> see [how does Spring Data Rest work?](#sdr)
+> see [how does Spring Data Rest work?](#sdr)  
+> But we need this controller to do code controller test, so don't delete it
 
 ### pricing.domain.price
 Price
@@ -65,24 +66,14 @@ Once converted to a microservice, the Service should not be explicitly necessary
 4. Lastly, Spring Data Rest exposes CRUD (Create, Read, Update, and Delete) operations as RESTful APIs over HTTP
 
 
-
-
 ## 2. Add an additional test 
 > add test to check whether the application appropriately generates a price for a given vehicle ID
 
-#### Run the code
-
-To run this service you execute:
-
-```
-$ mvn clean package
-```
-
-```
-$ java -jar target/pricing-service-0.0.1-SNAPSHOT.jar
-```
-
-It can also be imported in your IDE as a Maven project.
+- [PricingControllerUnitTest](./src/test/java/com/udacity/pricing/web/PricingControllerUnitTest.java): 
+    - RunWith, WebMvcTest
+    ```java
+    MockMvcRequestBuilders.get("/services/price")).param("vehicleId", "1")
+    ```
 
 # Question:
 ## difference between CrudRepository and @Repository?
