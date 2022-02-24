@@ -55,7 +55,7 @@ Once converted to a microservice, the Service should not be explicitly necessary
 3. [PriceRepository.java](./src/main/java/com/udacity/pricing/domain/price/PriceRepository.java): change PriceRepository to interface and use Spring data rest (extends CrudRepository).
 4. Use a web browser to view the Eureka web console to ensure your microservice is registered.
 ![img.png](img.png)
-5. access rest api created by spring data rest: http://localhost:8762/prices
+5. access rest api created by spring data rest: http://localhost:8082/prices
     > see [how does Spring Data Rest work?](#sdr)  
     
     ![img_2.png](img_2.png)
@@ -75,6 +75,9 @@ Once converted to a microservice, the Service should not be explicitly necessary
     MockMvcRequestBuilders.get("/services/price")).param("vehicleId", "1")
     ```
 
+# execute:
+http://localhost:8761/ to see eureka page
+access rest api created by spring data rest: http://localhost:8082/prices
 # Question:
 ## difference between CrudRepository and @Repository?
 - @Repository:
