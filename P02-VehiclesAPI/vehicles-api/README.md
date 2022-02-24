@@ -21,13 +21,23 @@ view of vehicle details including price and address.
 - Add additional tests to the `CarControllerTest.java` file based on the `TODOs`
 - Implement API documentation using Swagger
 
-# CarService.java
+# [CarService.java](./src/main/java/com/udacity/vehicles/service/CarService.java)
+1. reactive programming, mono and flux: [Java反应式框架Reactor中的Mono和Flux - SegmentFault 思否](https://segmentfault.com/a/1190000024499748###)
+    1. webclient: [Spring Boot WebClient Cheat Sheet | by Stanislav Vain | The Startup | Medium](https://medium.com/swlh/spring-boot-webclient-cheat-sheet-5be26cfa3e)
+    2. uri builder: [使用UriBuilder快速创建URI_最佳 Java 编程-CSDN博客](https://blog.csdn.net/dnc8371/article/details/106699735)
+2. optional to solve NPE(null point exception), .orElseThrow: [Throw Exception in Optional in Java 8 | Baeldung](https://www.baeldung.com/java-optional-throw-exception)
+
+we can also use PriceClient and MapsClient to use WebClient to get our data(recommend) 
 
 # CarController.java
+- [controller](src/main/java/com/udacity/vehicles/api/CarController.java)
 
 # CarControllerTest.jav additional test
 
 # documentation
+- [pom.xml](./pom.xml)
+- [SwaggerConfig](src/main/java/com/udacity/vehicles/config/SwaggerConfig.java)
+- [controller](src/main/java/com/udacity/vehicles/api/CarController.java)
 
 #### Run the Code
 
