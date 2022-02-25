@@ -60,12 +60,14 @@ public class CarControllerTest {
     @MockBean
     private MapsClient mapsClient;
 
+    private Car car;
+
     /**
      * Creates pre-requisites for testing, such as an example car.
      */
     @Before
     public void setup() {
-        Car car = getCar();
+        car = getCar();
         car.setId(1L);
         given(carService.save(any())).willReturn(car);
         given(carService.findById(any())).willReturn(car);
@@ -78,7 +80,6 @@ public class CarControllerTest {
      */
     @Test
     public void createCar() throws Exception {
-        Car car = getCar();
         mvc.perform(
                 post(new URI("/cars"))
                         .content(json.write(car).getJson())
