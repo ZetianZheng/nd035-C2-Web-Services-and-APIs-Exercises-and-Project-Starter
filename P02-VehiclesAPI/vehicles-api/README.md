@@ -31,8 +31,10 @@ we can also use PriceClient and MapsClient to use WebClient to get our data(reco
 
 # CarController.java
 - [controller](src/main/java/com/udacity/vehicles/api/CarController.java)
+- @RestController
 
 # CarControllerTest.jav additional test
+- [CarControllerTest](src/test/java/com/udacity/vehicles/api/CarControllerTest.java)
 
 # documentation
 - [pom.xml](./pom.xml)

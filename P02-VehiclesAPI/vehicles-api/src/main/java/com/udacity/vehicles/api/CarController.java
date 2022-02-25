@@ -27,6 +27,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Implements a REST-based controller for the Vehicles API.
+ * restController = @Controller + @ResponseBody
+ * @ResponseBody:
+ *      当我们想让页面知道我们返回的数据不是按照html标签的页面来解析，而是其他某种格式的数据解析时（如json、xml等）使用。
+ *      放在controller层的方法上，将Controller的方法返回的对象，通过适当的HttpMessageConverter转换为指定格式后，写入到Response对象的body数据区。
  */
 @ApiResponses(value = {
         @ApiResponse(code=400, message = "This is a bad request"),
